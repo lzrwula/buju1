@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            font-size: 12px;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-top: 55px;
+            /* padding-bottom: 870px; */
+        }
+        header{
+            height: 50px;
+            background-color: bisque;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        header div{
+            display: flex;
+        }
+        header .kuang{
+           width: 50px;
+           height: 50px;
+           margin: 0 15px;
+           cursor: pointer;
+       }
+    
+        header img{
+            width: auto;
+        	height: auto;
+	        max-width: 100%;
+	        max-height: 100%;
+        }
+        .top{
+            height: 30px;
+            width: 100%;
+            background-color: #cccccc;
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+            margin-bottom: 10px;
+        }
+        .top span{
+            font: 1rem 微软雅黑;
+            color: whitesmoke;
+            margin: 0 10vw;
+        }
+        .content{
+            display: flex;
+            flex-grow: 1;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        
+        footer{
+            height: 60px;
+            background-color: #e0e0df;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .content .zuo,.content .you{
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 60px;
+        }
+       .content .ct{
+           width: 100%;
+           display: flex;
+           flex-direction: column;
+           margin-bottom: 10px;
+           
+       }
+        .content img{
+            width: auto;
+        	height: auto;
+	        max-width: 100%;
+	        max-height: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .content .dibu{
+            height: 70px;
+            width: 100%;
+            background-color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            border-radius: 10px;
+        }
+        .content .dibu p{
+            font-size: 1rem;
+            margin-left: 6vw;
+        }
+        .content .dibu .xia span{
+            font-size: 1rem;
+            margin-right: 6vw;
+        }
+        .content .xia{
+            display: flex;
+            justify-content: space-between;
+        }
+        .dian{
+            display: flex;
+            margin-left: 6vw;
+        }
+        .dian1{
+            margin: 5px 5px 0 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: yellowgreen;cursor: pointer;
+        }
+        footer{
+            display:flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        footer div{
+           width: 50px;
+           height: 50px;
+           display: flex;   
+       }
+        footer img{
+            width: auto;
+        	height: auto;
+	        max-width: 100%;
+	        max-height: 100%;
+            cursor: pointer;
+        }
+        
+
+        /* .footer a{
+            display: block;
+            width: 50px;
+            height: 50px;
+        } */
+        /* .foot1{
+            background: url(../wenjian/image/商品.png);
+            display: block;
+            width: 50px;
+            height: 50px;
+        }
+        .foot2{
+            background: url(../wenjian/image/促销活动.png);
+        }
+        .foot3{
+            background: url(../wenjian/image/直播.png);
+        }
+        .foot4{
+            background: url(../wenjian/image/秒杀.png);
+        }
+        .foot5{
+            background: url(../wenjian/image/积分商城.png);
+        } */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="kuang"><img src="../wenjian/image/导航图标.png" alt=""></div>
+        <div>
+            <div class="kuang"><img src="../wenjian/image/搜索--1.png" alt=""></div>
+            <div class="kuang"><img src="../wenjian/image/店铺.png" alt=""></div>
+        </div>
+    </header>
+    <div class="top"><span>NEW ARRIVAL</span><span>324 products</span></div>
+    <div class="content">
+        <div class="zuo">
+            <div class="ct">
+                 <img src="../wenjian/image/-1022743577.jpg" alt="">
+                 <div class="dibu">
+                     <p>FILA</p>
+                     <div class="xia">
+                         <div class="dian">
+                            <div class="dian1"></div>
+                            <div class="dian1"></div>
+                            <div class="dian1"></div>
+                         </div>
+                        
+                         <span>569RMB</span>
+                     </div>
+                     
+                </div>
+            </div>
+           <div class="ct">
+                 <img src="../wenjian/image/-1222206117.jpg" alt="">
+                 <div class="dibu">
+                    <p>DICKIES</p>
+                    <div class="xia">
+                        <div class="dian">
+                            <div class="dian1"></div>
+                            <div class="dian1"></div>
+                            <div class="dian1"></div>
+                         </div>
+                        <span>166RMB</span>
+                    </div>
+                 </div>
+           </div>
+           <div class="ct">
+                 <img src="../wenjian/image/-152069577.jpg" alt="">
+                 <div class="dibu">
+                    <p>LEVES</p>
+                    <div class="xia">
+                        <div class="dian">
+                            <div class="dian1"></div>
+                            <div class="dian1"></div>
+                            <div class="dian1"></div>
+                         </div>
+                        <span>539RMB</span>
+                    </div>
+                 </div>
+           </div>
+           <div class="ct">
+                 <img src="../wenjian/image/-486931786.jpg" alt="">
+                 <div class="dibu">
+                    <p>FILA</p>
+                    <div class="xia">
+                        <div class="dian">
+                            <div class="dian1"></div>
+                            <div class="dian1"></div>
+                            <div class="dian1"></div>
+                         </div>
+                        <span>249.9RMB</span>
+                    </div>
+                 </div>
+           </div>
+           <div class="ct">
+                 <img src="../wenjian/image/-1222206117.jpg" alt="">
+                 <div class="dibu">
+                    <p>FILA</p>
+                    <div class="xia">
+                        <div class="dian">
+                            <div class="dian1"></div>
+                            <div class="dian1"></div>
+                            <div class="dian1"></div>
+                         </div>
+                        <span>166RMB</span>
+                    </div>
+                 </div>
+            </div>
+            <div class="ct">
+                <img src="../wenjian/image/-1022743577.jpg" alt="">
+                <div class="dibu">
+                    <p>FILA</p>
+                     <div class="xia">
+                        <div class="dian">
+                            <div class="dian1"></div>
+                            <div class="dian1"></div>
+                            <div class="dian1"></div>
+                         </div>
+                         <span>569RMB</span>
+                     </div>
+                </div>
+            </div>
+        </div>
+           
+           <div class="you">
+               <div class="ct">
+                    <img src="../wenjian/image/-905055643.jpg" alt="">
+                    <div class="dibu">
+                        <p>NIKO</p>
+                     <div class="xia">
+                        <div class="dian">
+                            <div class="dian1"></div>
+                            <div class="dian1"></div>
+                            <div class="dian1"></div>
+                         </div>
+                         <span>546RMB</span>
+                     </div>
+                    </div>
+                </div>
+                <div class="ct">
+                     <img src="../wenjian/image/1068519661.jpg" alt="">
+                     <div class="dibu">
+                        <p>MARK</p>
+                        <div class="xia">
+                            <div class="dian">
+                                <div class="dian1"></div>
+                                <div class="dian1"></div>
+                                <div class="dian1"></div>
+                             </div>
+                            <span>324RMB</span>
+                        </div>
+                     </div>
+                 </div>
+                 <div class="ct">
+                     <img src="../wenjian/image/511343502.jpg" alt="">
+                     <div class="dibu">
+                        <p>STAYREAL</p>
+                        <div class="xia">
+                            <div class="dian">
+                                <div class="dian1"></div>
+                                <div class="dian1"></div>
+                                <div class="dian1"></div>
+                             </div>
+                            <span>252RMB</span>
+                        </div>
+                     </div>
+                 </div>
+                 <div class="ct">
+                     <img src="../wenjian/image/793701165.jpg" alt="">
+                     <div class="dibu">
+                        <p>DICKIES</p>
+                        <div class="xia">
+                            <div class="dian">
+                                <div class="dian1"></div>
+                                <div class="dian1"></div>
+                                <div class="dian1"></div>
+                             </div>
+                            <span>569RMB</span>
+                        </div>
+                     </div>
+                 </div>
+                 <div class="ct">
+                     <img src="../wenjian/image/-1222206117.jpg" alt="">
+                     <div class="dibu">
+                        <p>DICKIES</p>
+                        <div class="xia">
+                            <div class="dian">
+                                <div class="dian1"></div>
+                                <div class="dian1"></div>
+                                <div class="dian1"></div>
+                             </div>
+                            <span>166RMB</span>
+                        </div>
+                     </div>
+                </div>
+                 <div class="ct">
+                     <img src="../wenjian/image/-152069577.jpg" alt="">
+                     <div class="dibu">
+                        <p>LEVIS</p>
+                        <div class="xia">
+                            <div class="dian">
+                                <div class="dian1"></div>
+                                <div class="dian1"></div>
+                                <div class="dian1"></div>
+                             </div>
+                            <span>539RMB</span>
+                        </div>
+                     </div>
+                </div>
+            </div>
+           
+    </div>
+    <footer>
+        <!-- <a class="foot1" href="#"></a>
+        <a class="foot2" href="#"></a>
+        <a class="foot3" href="#"></a>
+        <a class="foot4" href="#"></a>
+        <a class="foot5" href="#"></a> -->
+        <div><img src="../wenjian/image/商品.png" alt=""></div>
+        <div><img src="../wenjian/image/直播.png" alt=""></div>
+        <div><img src="../wenjian/image/秒杀.png" alt=""></div>
+        <div><img src="../wenjian/image/积分商城.png" alt=""></div>
+        <div><img src="../wenjian/image/促销活动.png" alt=""></div>
+    </footer>
+    
+</body>
+</html>
