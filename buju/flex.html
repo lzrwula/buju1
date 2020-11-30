@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <title>Document</title>
+    <style>
+        /*  5336 x 3332
+            2134 x 2668
+
+        */
+
+        body{
+            margin: 0;
+        }
+        .bc{
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-image: url(img/bj.png);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .jiemian{
+            height: 80vh;
+            width: 79.54vw;
+            min-width: 1000px;
+            min-height: 631px;
+            display: flex;
+            box-shadow: 0px 0px 20px -6px black;
+        }
+        .jiemian1{
+            width: 50%;
+            height: 100%;
+            
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .jiemian2{
+            width: 50%;
+            height: 100%;
+            background-size: cover;
+            background-image: url(img/dljm.png);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10vw;
+        }
+        .jiemian1 img{
+            width: 50px;
+            height: 50px;
+        }
+        .login{
+            height: 60px;
+            width: 215px;
+            border: none;
+            background-color: white;
+            background-image: url(img/dlt.png);
+            background-size: 100% 100%;
+            color: #fee6ec;
+            margin-bottom: 2vh;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: center;
+        }
+        form div:last-child{
+            display: flex;
+            margin-top: 5vh;
+        }
+
+        form div:last-child button{
+            width: 10vw;
+            max-width: 120px;
+            min-width: 100px;
+            margin-left: 5vw;
+            border-radius: 50px;
+            background-color: white;
+            font-size: 0.8em;
+            color: #fea9d6;
+            border: #feb9b9 solid 1px;
+        }
+
+        button{
+            outline: none;
+        }
+
+        form div:last-child p{
+            font-size: 0.8em;
+            color: #737373;
+        }
+
+        #tidi{
+            font-size: 1.5em;
+            color: #686868;
+        }
+
+        #please{
+            font-size: 0.8em;
+            color: #727272;
+            margin-left: -87px;
+        }
+
+        .xiao{
+            font-size: 0.5em;
+            color: #dbdbdb;
+            margin-left: 20px;
+        }
+
+        input{
+            width: 285px;
+            height: 60px;
+            border-radius: 50px;
+            border: none;
+            border: #d1d1d1 1px solid;
+            margin-bottom: 3vh;
+            padding: 0 10px;
+            outline: none;
+        }
+
+        .jiemian1 div a{
+            text-decoration: none;
+            font-size: 0.7em;
+            color: #d8d8d8;
+        }
+
+        .p1{
+            font-size: 2em;
+            color: white;
+        }
+
+        .p2{
+            font-size: 0.8em;
+            color: white;
+            line-height: 15px;
+        }
+
+        .dian{
+            display: flex;
+            margin-top: 50px;
+        }
+
+        .dian div{
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: white;
+            margin-right: 10px;
+        }
+
+        
+
+        .dian div:last-child{
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: white;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="bc">
+        <div class="jiemian">
+            <div class="jiemian1">
+                <img src="img/logo.png" alt="T">
+                <p id="tidi">We are Tidi</p>
+                <p id="please">Please Login to your account</p>
+                <form>
+                    <div class="username">
+                    <p class="xiao">Username</p>
+                    <input placeholder="Phone no or emali id" type="text" name="" id="">
+                </div>
+                <div class="password">
+                    <p class="xiao">Password</p>
+                    <input placeholder="Password" type="text" value="" name="" id="">
+                </div>
+
+                <button type="submit" class="login">Login to Tidi</button>
+                <div><a href="#">Forgot Password?</a></div>
+                <div>
+                    <p>Don't have an account?</p>
+                    <button>Create New</button>
+                </div>
+                </form>
+                
+            </div>
+            <div class="jiemian2">
+                <p class="p1">We are more than just a company</p>
+                <p class="p2">If you need to take a screenshot of your screen, you may simply use the PrtScr key on your keyboard. But if you also need to do some basic editing to the captured image, then FastStone Capture is a good option.</p>
+                <div class="dian">
+                    <div>
+                        <div onmouseover="animates1();" onmouseout="animatess1();" class="di dian1"></div>
+                    </div>
+                    <div>
+                        <div onmouseover="animates2();" onmouseout="animatess2();" class="di dian2"></div>
+                    </div>
+                    <div>
+                        <div onmouseover="animates3();" onmouseout="animatess3();" class="di dian3"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // var test1 = $('.di');
+        // console.log(test);
+        function animates1(){
+            $('.dian1').animate({
+                width:'15px',
+                height: '10px'
+            },250);
+        };
+
+        function animatess1(){
+            $('.dian1').animate({
+                width:'10px',
+                height: '10px'
+            },100);
+        }
+
+        function animates2(){
+            $('.dian2').animate({
+                width:'15px',
+                height: '10px'
+            },250);
+        };
+
+        function animatess2(){
+            $('.dian2').animate({
+                width:'10px',
+                height: '10px'
+            },100);
+        }
+
+        function animates3(){
+            $('.dian3').animate({
+                width:'15px',
+                height: '10px'
+            },250);
+        };
+
+        function animatess3(){
+            $('.dian3').animate({
+                width:'10px',
+                height: '10px'
+            },100);
+        }
+        // test.animate({
+        //     width: '20px',
+        //     height: '10px'
+        // },300);
+    </script>
+</body>
+</html>

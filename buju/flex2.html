@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            margin: 0;
+        }
+        body{
+            margin: 0;
+            /* background-size: cover;
+            background-image: url(img2/背景图_画板\ 1.png); */
+            background-color: #e8fefb;
+        }
+        .bc{
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-image: url(img2/背景图_画板\ 1.png);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .bc1{
+            width: 80vw;
+            min-height: 724px;
+            max-height: 770px;
+            min-width: 1350px;
+            max-width: 1600px;
+            height: 80vh;
+            background-color: white;
+            border-radius: 20px;
+            padding: 35px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .left{
+            width: 16%;
+            height: 100%;
+            min-width: 135px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-left: 28px;
+            /* flex: 0; */
+        }
+        .center{
+            width: 59%;
+            height: 95%;
+            min-width: 722px;
+            max-width: 800px;
+            min-height: 620px;
+            max-height: 747px;
+            /* background-color: #f6f7fb; */
+            background-color: #f6f7fb;
+            padding: 27px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .right{
+            width: 22%;
+            height: 100%;
+        }
+        .left img{
+            /* height: 13%; */
+            height:80px;
+            width: 80px;
+            
+            /* height: 80px; */
+            flex-grow: 0;
+        }
+        .left img:last-child{
+            /* margin-left: 10px; */
+            /* margin-top: 150px; */
+            justify-self: flex-end;
+        }
+        
+        .leftc{
+            width: 100%;
+            /* height: 100%; */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .left .leftc div:nth-child(2){
+            background-color: #59cae8;
+        }
+        .left .leftc div{
+            width: 75%;
+            border-radius: 12px;
+            /* width: 147px; */
+            min-width: 125px;
+            /* height: 6.21%; */
+            min-height: 35px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .leftc img{
+            width: 29px;
+            height: 29px;
+            /* justify-self: end; */
+        }
+        .leftc:nth-child(4){
+            background-color: white;
+            margin-left: -5px;
+        }
+        .leftc p{
+            font-size: 14px;
+        }
+
+        .center .center1{
+            height: 60px;
+            
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+        .center .center1 #textbox{
+            border-radius: 10px;
+            margin: 0;
+            padding: 0 60px 0 10px;
+            height: 60px;
+            width: 295px;
+            border: none;
+            outline: none;
+        }
+        .center .center1 #submit{
+            background: url(img2/查找.png);
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            height: 50px;
+            width: 50px;
+            border: none;
+            outline: none;
+            margin-left: -60px;
+        }
+        .center .center1 div{
+            padding-right: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .center .center1 button{
+            width: 180px;
+            height: 60px;
+            background-color: #f6f7fb;
+            border-radius: 10px;
+            border: 2px solid #76cee2;
+            color: #76cee2;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .center .center2{
+            display: flex;
+            justify-content: space-between;
+        }
+        .center .center2 .yaowan{
+            width: 360px;
+            height: 126px;
+            background: url(img2/药.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+        }
+        .center .center2 .repa{
+            display: flex;
+            
+        }
+        .center .center2 .re,.center .center2 .pa{
+            height: 126px;
+            width: 105px;
+            background-color: white;
+            border-radius: 10px;
+            margin-right: 2vw;
+            display: flex;
+            flex-direction: column;
+        }
+        .yaowan h3{
+            color: white;
+            margin: 0;
+            margin-left: 20px;
+        }
+        .yaowan div{
+            margin-left: 20px;
+            margin-top: 10px;
+            width: 250px;
+            font-size: 13px;
+            color: #d9f1f6;
+            display: flex;
+        }
+        .yaowan div img{
+            width: 13px;
+            height: 13px;
+            align-self: flex-end;
+        }
+        .repa img{
+            width: 105px;
+        }
+
+        .repa .dap{
+            font-size: 20px;
+            margin-bottom: 1px;
+            margin-left: 15px;
+            font-weight: bold;
+            /* color: #fd867e; */
+        }
+        .repa .xiaop{
+            font-size: 13px;
+            margin-left: 15px;
+            /* color: #fd867e; */
+        }
+        .re .xiaop,.re .dap{
+            color: #fd867e;
+        }
+        .pa .xiaop,.pa .dap{
+            color: #68c9d6;
+        }
+
+        .center3{
+            font-size: 20px;
+            font-weight: bold;
+            margin: 18px 0 25px 0;
+        }
+        
+        .center4{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .center41{
+            width: 216px;
+            height: 66px;
+            background-color: #fb8885;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .center42{
+            width: 210px;
+            height: 66px;
+            background-color: #ffb55c;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .center43{
+            width: 210px;
+            height: 66px;
+            background-color: #69c9d7;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .center4 img{
+            height: 45px;
+            width: 45px;
+        }
+
+        .center4 .center4zi p,.center4 .center4zi span{
+            margin: 0;
+            
+        }
+        .center4 .center4zi p{
+            font-size: 10px;
+            color: #fee1e0;
+        }
+        .center4 .center4zi span{
+            font-size: 14px;
+            color: #fef7f6;
+        }
+
+        .center5{
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        .center51{
+            height: 275px;
+            width: 443px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .center52{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 275px;
+            width: 254px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        .center511{
+            width: 403px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .center511 p{
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .center511 .center511img img{
+            width: 28px;
+            height: 28px;
+            margin-left: 10px;
+        }
+        .center51 .center512{
+            width: 380px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-self: center;
+        }
+        .center51 .center511img2{
+            width: 345px;
+            
+        }
+        .center511img2k{
+            display: flex;
+            justify-content: space-between;
+        }
+        .center511img2k div{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .center511img2k div p{
+            margin-top: -7px;
+            font-size: 13px;
+            color: #d4d4d4;
+        }
+        #yue{
+            display: flex;
+            align-self: flex-end;
+            width: 345px;
+            justify-content: space-between;
+        }
+        #yue p{
+            align-self: flex-end;
+            color: #d4d4d4;
+            font-size: 13px;
+        }
+        
+        .center52 .center52k{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 200px;
+            height: 245px;
+        }
+        .center52 .center521{
+            display: flex;
+            
+            justify-content: space-between;
+        }
+        .center52 .center521 p{
+            font-size: 17px;
+            font-weight: bold;
+        }
+        .center52 .center521 img{
+            width: 37px;
+            height: 37px;
+        }
+        .center522,.center523,.center524{
+            display: flex;
+            align-items: center;
+        }
+        .center522 div,.center523 div,.center524 div{
+            height: 15px;
+            width: 15px;
+            background-color: black;
+            border-radius: 50%;
+            margin-right: 21px;
+        }
+        .center522 div{
+            background-color: #69c9d7;
+        }
+        .center523 div{
+            background-color: #fd867e;
+        }
+        .center524 div{
+            background-color: #ffb55c;
+        }
+        .center52 .yuan{
+            width: 115px;
+            height: 115px;
+            align-self: center;
+        }
+        .rightk{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 215px;
+            height: 100%;
+            /* background-color: rgb(250, 104, 104); */
+        }
+        .right{
+            display: flex;
+            justify-content: center;
+        }
+        .right1{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            position: relative;
+        }
+        .close {
+        /* position: absolute;
+        right: 32px;
+        top: 32px; */
+        width: 32px;
+        height: 32px;
+        }
+        .close:before, .close:after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 33px;
+        width: 2px;
+        background-color: #5bcae6;
+        }
+        .close:before {
+        transform: rotate(45deg);
+        }
+        .close:after {
+        transform: rotate(-45deg);
+        }
+        .right2{
+            height: 150px;
+            width: 150px;
+        }
+        .dian{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 33px;
+            width: 6px;
+        }
+        .dian div{
+            border-radius: 50%;
+            height: 6px;
+            width: 6px;
+            background-color: #5bcae6;
+        }
+        .right34{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+        .right3{
+            font-size: 21px;
+            font-weight: bold;
+        }
+        .right4{
+            font-size: 15px;
+            color: #cccccc;
+        }
+        .right5{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .right5 p{
+            font-size: 17px;
+            color: black;
+            font-weight: bold;
+        }
+        .right5 a{
+            text-decoration: none;
+            color: #58c9e6;
+            font-weight: bold;
+        }
+        .right6{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 0 20px rgb(88, 88, 88);
+            height: 100px;
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+        }
+        .right6 img{
+            height: 45px;
+            width: 45px;
+        }
+        .right6 div{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 75px;
+        }
+        .right6 div p:first-child,.right6 div p:nth-child(2){
+            color: #383838;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .right6 div p:last-child{
+            color: #d2d2d2;
+            font-size: 13px;
+        }
+        .right78{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            height: 112px;
+        }
+        .right7{
+            height: 17px;
+            font-weight: bold;
+            align-self: flex-start;
+        }
+        .right8{
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 70px;
+            border-radius: 10px;
+            background-color: #69c9d7;
+        }
+        .right8 p{
+            
+            margin-left: 25px;
+            font-size: 12px;
+            color: white;
+            width: 140px;
+        }
+        .yc{
+            position: relative;
+            position: absolute;
+            right: 10px;
+            top: -12px;
+            border: 2px solid white;
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            background-color: #ef8b73;
+        }
+        .yc1{
+            position: absolute;
+            top: 7px;
+            left: 3px;
+            width: 7px;
+            height: 7px;
+            border-top: 2px solid white;
+            border-right: 2px solid white;
+            transform: rotate(45deg);
+        }
+        .yc2{
+            position: absolute;
+            top: 7px;
+            left: 14px;
+            width: 7px;
+            height: 7px;
+            border-top: 2px solid white;
+            border-right: 2px solid white;
+            transform: rotate(-135deg);
+        }
+        .specail{
+            margin-left: 11px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bc">
+        <div class="bc1">
+            <div class="left">
+                <div>
+                    <img src="img2/创可贴.png" alt="创口贴">
+                <div class="leftc">
+                    <div class="left1">
+                        <img src="img2/人员图标.png" alt="人员图标">
+                        <p>Patients</p>
+                    </div>
+                    <div class="left2">
+                        <img src="img2/数据(白色).png" alt="">
+                        <p>Overview</p>
+                    </div>
+                    <div class="left3">
+                        <img src="img2/今日任务.png" alt="">
+                        <p>Histories</p>
+                    </div>
+                    <div class="left4">
+                        <img class="specail" src="img2/时钟 实心.png" alt="">
+                        <p>Appoinments</p>
+                    </div>
+                    <div class="left5">
+                        <img src="img2/齿轮.png" alt="">
+                        <p>Setting</p>
+                    </div>
+                </div>
+                </div>
+                
+                
+                <img src="img2/电话.png" alt="">
+            </div>
+
+            <div class="center">
+                <div class="center1">
+                    <div>
+                        <input id="textbox" type="text">
+                        <input id="submit" type="button">
+                    </div>
+                    
+                    <button>+ &emsp; Add patient</button>
+                </div>
+                <div class="center2">
+                    <div class="yaowan">
+                        <h3>Hi,Jennifer!</h3>
+                        <div>
+                            
+                            <span>You've been doing your whole work plan for the last two months Way go</span>
+                            <img src="img2/点赞.png" alt="">
+                        </div>
+                        
+                    </div>
+                    <div class="repa">
+                        <div class="re">
+                            <div>
+                                <p class="dap">+11</p>
+                                <p class="xiaop">reviews</p>
+                            </div>
+                            
+                            <img src="img2/3.png" alt="">
+                        </div>
+                        <div class="pa">
+                            <div>
+                                <p class="dap">+78</p>
+                                <p class="xiaop">patients</p>
+                            </div>
+                            
+                            <img src="img2/4.png" alt="">
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="center3">Pantient analytics</div>
+                <div class="center4">
+                    <div class="center41">
+                        <img src="img2/心率.png" alt="">
+                        <div class="center4zi">
+                            <span>Appoinments today</span>
+                            <p>15 patients</p>
+                        </div>
+                    </div>
+                    <div class="center42">
+                        <img src="img2/人员.png" alt="">
+                        <div class="center4zi">
+                            <span>New patients</span>
+                            <p>125 for the month</p>
+                        </div>
+                    </div>
+                    <div class="center43">
+                        <img src="img2/任务清单.png" alt="">
+                        <div class="center4zi">
+                            <span>Total patients</span>
+                            <p>2000+</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="center5">
+                    <div class="center51">
+                        <div class="center511">
+                            <p>This week's analytics overview</p>
+                            <div class="center511img">
+                                <img src="img2/条形图.png">
+                                <img src="img2/线条.png">
+                            </div>
+                            
+                        </div>
+                        <div class="center512">
+                            <div class="center511img2k">
+                                <div><p>25</p>
+                                    <p>20</p>
+                                    <p>15</p>
+                                    <p>10</p>
+                                    <p>5</p>
+                                    <p>0</p>
+                                </div>
+                                <!-- <p>25&emsp;20&emsp;15&emsp;10&emsp;5&emsp;0</p> -->
+                                <img class="center511img2" src="img2/2.png">
+                            </div>
+                            <div id="yue">
+                                <p>Mon</p>
+                                <p>Tue</p>
+                                <p>Wed</p>
+                                <p>Thu</p>
+                                <p>Fri</p>
+                                <p>Sat</p>
+                                <p>Sum</p>
+                                <!-- <p id="yue">Mon &emsp;Tue &emsp;Wed &emsp;Thu&emsp;&emsp;Fri&emsp;&emsp;Sat&ensp;&ensp;&ensp;&emsp;Sun</p> -->
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="center52">
+                        <div class="center52k">
+                            <div class="center521">
+                                <p>Progress</p>
+                                <img src="img2/刷新.png">
+                            </div>
+                            <img class="yuan" src="img2/1.png" alt="">
+                            <div class="center522">
+                                <div></div>
+                                <p>Health</p>
+                            </div>
+                            <div class="center523">
+                                <div></div>
+                                <p>Continue treatment</p>
+                            </div>
+                            <div class="center524">
+                                <div></div>
+                                <p>Neutral</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="rightk">
+                    <div class="right1">
+                        <a href="#" class="close"></a>
+                        <div class="dian"><div></div><div></div><div></div></div>
+                </div>
+                    <img class="right2" src="img2/头像.png" alt="">
+                    <div class="right34">
+                        <p class="right3">Jennifer Turner</p>
+                        <p class="right4">Cardiologist</p>
+                    </div>
+                    
+                    <div class="right5">
+                        <p>Next event</p>
+                        <a href="#">+&emsp;Add</a>
+                    </div>
+                    <div class="right6">
+                        <img src="img2/相机.png">
+                        <div>
+                            <p>Medical conference</p>
+                            <p>May 5 - 11:00 AM</p>
+                            <p>USA Houston</p>
+                        </div>
+                    </div>
+                    <div class="right78">
+                        <p class="right7">Next norifications</p>
+                        <div class="right8">
+                            <div class="yc">
+                                <div class="yc1"></div>
+                                <div class="yc2"></div>
+                            </div>
+                            <p>The patient will come to you in 5 minutes.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
