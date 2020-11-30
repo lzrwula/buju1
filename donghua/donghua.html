@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        div{
+            justify-content: center;
+            display: flex;
+        }
+
+        canvas{
+            margin: 50px 0px;
+            box-shadow: 0 0 10px #333;
+            background-color: #636e72;
+            flex-grow: 1;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+            
+        }
+        #show{
+            margin-left: 10px;
+        }
+        #charu{
+            margin: 0 10px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+
+        <div class="ddd"><input value="17,33,26,26,24,17,23" id="shuru" type="text"><button id="show">显示/重置</button></div>
+        
+
+        <div><div><canvas id="drawing" width="300" height="200">A drawing of something.</canvas></div></div>
+        
+        <div class="ddd">
+            <button id="maopao">冒泡排序</button>
+            <button id="charu">插入排序</button>
+            <button id="xuanze">选择排序</button>
+        </div>
+        
+</body>
+<script>
+        const mp = document.getElementById('maopao');
+        const cr = document.getElementById('charu');
+        const xz = document.getElementById('xuanze');
+        const textbox = document.getElementById('shuru');
+        const show = document.getElementById('show');
+
+        
+
+        console.log(textbox);
+
+
+        
+
+        var arr1=[],a=[];
+
+        show.onclick = function(event){
+            
+            let drawing=document.getElementById("drawing");
+
+            var context=drawing.getContext("2d");
+
+            context.fillStyle = "#636e72";
+            context.fillRect(0,0,300,200);
+
+            arr1=textbox.value.split(",");
+
+            function Rect(height,x){
+                this.height=height;
+                this.x=x;
+            }  
+            Rect.prototype.y=180;
+            Rect.prototype.width=-30;
+            Rect.prototype.hua=function(color){
+                context.fillStyle=color;
+                context.fillRect(this.x,180,-30,-this.height*5);
+                context.font = "bold 20px Arial";
+                context.textAlign = "center";
+                context.textBaseline = "middle";
+                context.fillStyle = "#ff9ab8";
+                context.fillText(this.height,this.x-15,170);
+            }
+
+            for(let i=0;i<arr1.length;i++){
+                a[i]=new Rect(arr1[i],41*(i+1));
+            }
+
+            
+
+            for(let i=0;i<arr1.length;i++){
+                a[i].hua("#74b9ff");
+            };
+
+            clearInterval(stop);
+        }
+
+        function charu(){
+
+
+            var i=1,j=1,judge=1,mid,judge2=0;
+
+            
+
+            stop = setInterval(function(){
+
+                
+                
+                    if(judge==1){
+                        i=j-1;
+                        a[j].hua("#e8df52");
+                        judge=2;
+
+
+                    }else if(judge==2){
+                        console.log(i);
+                        a[i+1].hua("#e55039");
+                        a[i].hua("#e55039");
+                        judge=3;
+
+                    }else if(judge==3){
+                        if(a[i+1].height<a[i].height){
+                            a[i+1].hua("#636e72");
+                            a[i].hua("#636e72");
+
+                            mid=a[i+1].height;
+                            a[i+1].height=a[i].height;
+                            a[i].height=mid;
+
+                            a[i+1].hua("#e55039");
+                            a[i].hua("#e55039");
+
+                            i--;
+
+                            judge=2;
+
+                            if(i==-1){
+                                i=0;
+                                for(let x=i;x<=j;x++){
+                                a[x].hua("#74b9ff");
+                                }
+                                    j++;
+                                    judge=1;
+                                }
+                            }else{
+                            for(let x=i;x<=j;x++){
+                                a[x].hua("#74b9ff");
+                            }
+                            j++;
+                            judge=1;
+                        }
+                    }
+                    
+                if(j==arr1.length){
+                    clearInterval(stop);
+                }
+                
+
+                
+            },200);
+        }
+        
+        function maopao(){
+            var i=0,j=0,judge=0,mid;
+
+            stop = setInterval(function(){
+
+                if(judge==0){
+                    if(i>0){
+                        a[i-1].hua("#74b9ff")
+                        a[i].hua("#e55039");
+                        a[i+1].hua("#e55039");
+                    }else if(i<arr1.length-(j+1)){
+                        a[i].hua("#e55039");
+                        a[i+1].hua("#e55039");
+                    }
+                    judge=1;
+                }else{
+                    if(a[i].height>a[i+1].height){
+                        a[i].hua("#636e72");
+                        a[i+1].hua("#636e72");
+                        mid=a[i].height;
+                        a[i].height=mid;
+                        a[i].height=a[i+1].height;
+                        a[i+1].height=mid;
+                        a[i].hua("#e55039");
+                        a[i+1].hua("#e55039");
+                        if(i==arr1.length-(j+1)-1){
+                            a[i].hua("#74b9ff");
+                        }
+                    }
+                    i++;
+                    judge=0;
+                };   
+                
+
+                if(i==arr1.length-(j+1)){
+                    j++;
+                    i=0;
+                };
+
+                if(j==arr1.length){
+                    clearInterval(stop);
+                }
+                
+            },200);
+            
+        }
+
+        function xuanze(){
+                var i=0,j=1,min=0,minindex=i,judge=0;
+
+                stop = setInterval(function(){
+                    if(j==i+1){ 
+                        min=a[i].height;
+                        minindex=i;
+                        a[j].hua("#e55039");
+                    }else if(j!=i+1&&j!=arr1.length+1){
+                        a[j-1].hua("#74b9ff");
+                        if(j!=arr1.length){
+                            a[j].hua("#e55039");
+                        }
+                    };
+
+                    if(j==arr1.length+1){
+                        if(judge==0){
+                            a[minindex].hua("#ffb55c");
+                            judge=1;
+                        }else{
+                            console.log(minindex);
+                            a[minindex].hua("#636e72");
+                            a[i].hua("#636e72");
+                            console.log(a[minindex].height);
+                            console.log(a[i].height);
+                            a[minindex].height=a[i].height;
+                            a[i].height=min;
+
+                            a[minindex].hua("#74b9ff");
+                            a[i].hua("#78e08f");
+                            if(i==arr1.length-2){
+                                a[i+1].hua("#78e08f");
+                                clearInterval(stop);
+                            }
+
+                            console.log(a[minindex].height);
+                            console.log(a[i].height);
+
+                            i++;
+                            j=i;
+                            console.log('ok');
+                            judge=0;
+                        }
+                        
+                    };
+
+                    if(j<arr1.length){
+                        console.log(j);
+                        console.log(a[j].height);
+                        console.log(min);
+                        if(min>a[j].height){
+                            min=a[j].height;
+                            minindex=j;
+                        }
+                    };
+                if(judge==0){
+                    j++;
+                }
+                
+                },200);
+            };
+
+        xz.onclick = function(event){
+            xuanze();
+        }
+        mp.onclick = function(event){
+            maopao();
+        }
+        cr.onclick = function(event){
+            charu();
+        }
+
+        
+        
+
+
+
+
+</script>
+</html>
